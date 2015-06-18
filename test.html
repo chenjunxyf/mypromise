@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<script src="./mypromise.js"></script>
+</head>
+<body>
+	<script>
+		var count = 1;
+		var p = new Promise(function(resolve, reject) {
+			resolve(count);
+		});
+		p.then(function(val) {
+			console.log(++val);
+			return val;
+		}).done(function(val) {
+			console.log(++val);
+			return val;
+		}).then(function(val) {
+			console.log(++val);
+			return val;
+		});
+	</script>
+</body>
+</html>
